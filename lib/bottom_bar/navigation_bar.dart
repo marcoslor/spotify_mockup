@@ -1,14 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show Colors, Icons;
 import 'package:flutter/widgets.dart';
 
-class NavigationBar extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return _NavigationBarState();
-  }
-}
-
-class _NavigationBarState extends State<NavigationBar> {
+class NavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,10 +11,11 @@ class _NavigationBarState extends State<NavigationBar> {
         height: 56,
         child: DefaultTextStyle(
           style: TextStyle(
-              color: Colors.white,
-              fontSize: 10,
-              fontWeight: FontWeight.w400,
-              height: 1.2),
+            color: Colors.grey[400],
+            fontSize: 9.6,
+            fontWeight: FontWeight.w400,
+            height: 1.2,
+          ),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
@@ -30,7 +24,10 @@ class _NavigationBarState extends State<NavigationBar> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Icon(Icons.home, color: Colors.white, size: 32),
-                    Text("Home")
+                    Text(
+                      "Home",
+                      style: TextStyle(color: Colors.white),
+                    )
                   ],
                 ),
               ),

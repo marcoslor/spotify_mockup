@@ -5,9 +5,7 @@ import 'package:flutter/widgets.dart';
 
 class HomescreenColumn extends StatelessWidget {
   @override
-  Widget build(
-    BuildContext context,
-  ) {
+  Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 36),
       child: Column(

@@ -1,31 +1,24 @@
-import 'dart:ui' as ui;
-
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:spotify_mockup/bottom_bar/bottom_bar.dart';
-import 'package:spotify_mockup/homescreen/homescreen.dart';
+import 'package:spotify_mockup/router.dart';
 
-void main() => runApp(Spotify());
+void main() => runApp(SpotifyMockup());
 
-class Spotify extends StatelessWidget {
+class SpotifyMockup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Color(0xff121212),
-      child: MediaQuery(
-        data: MediaQueryData.fromWindow(ui.window),
-        child: Directionality(
-          textDirection: TextDirection.ltr,
-          child: Column(
-            children: <Widget>[
-              Expanded(
-                child: HomeScreen(),
-              ),
-              BottomBar(),
-            ],
-          ),
+    return DefaultTextStyle(
+        style: const TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.w800,
+          fontSize: 13,
+          letterSpacing: 0.2,
         ),
-      ),
-    );
+        child: WidgetsApp(
+          title: 'Spotify mockup made with flutter.',
+          initialRoute: homeRoute,
+          onGenerateRoute: Router.generateRoute,
+          color: Colors.black,
+        ));
   }
 }
